@@ -45,10 +45,11 @@ var getUserRepos = function(user) {
         // request was successful
         if (response.ok) {
             response.json().then(function(data) {
+                console.log(data);
                 displayRepos(data, user);
             });
         } else {
-        alert("Error: GitHub User Not Found");
+        alert("Error: " + response.statusText);
         }
     })
     .catch(function(error) {
@@ -65,7 +66,7 @@ var getFeaturedRepos = function(language) {
         if (response.ok) {
             response.json().then(function(data) {
                 displayRepos(data.items, language);
-            })
+            });
         } else {
             alert('Error: GitHub User Not Found');
         }
