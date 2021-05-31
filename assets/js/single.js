@@ -5,18 +5,15 @@ var limitWarningEl = document.querySelector("#limit-warning");
 let getRepoName = function() {
     var queryString = document.location.search;
     var repoName = queryString.split("=") [1];
-    getRepoIssues(repoName);
 
     if(repoName) {
         repoNameEl.textContent = repoName;  
         
-        getRepoIssues
+        getRepoIssues(repoName);
     } else {
         document.location.replace("./index.html");
     } 
 };
-
-var queryString = document.location.search;
 
 var getRepoIssues = function(repo) {
 
